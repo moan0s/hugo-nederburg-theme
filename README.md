@@ -91,6 +91,7 @@ Thanks to Lukas Herman's PR there is now a multiple writers feature. In order to
     instagram     = "full profile url in instagram"
     github        = "full profile url in github"
     pinterest     = "full profile url in pinterest"
+    mastodon      = "full profile url in mastodon" # Will also set the rel="me" attribute to work as verification
 ```
 
 If you have a writer and set it in the front matter of the post markdown file it will override the author in the config. See the exampleSite folder for a working solution. Here is an example of a front matter entry for the writer defined above.

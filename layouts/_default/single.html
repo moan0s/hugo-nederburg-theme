@@ -177,6 +177,15 @@ title="pinterest icon"></i>
 </a>
 {{end}}
 
+{{ with $writer.mastodon }}
+<a class="mastodon" rel="me" target="_blank"
+href="{{ . }}">
+<i class="fab fa-mastodon"
+title="mastodon icon"></i>
+</a>
+{{end}}
+
+
 
 {{ else }}
 {{ with .Site.Params.social.facebook }}
@@ -251,6 +260,17 @@ href="{{ . }}">
 title="pinterest icon"></i>
 </a>
 {{end}}
+
+
+{{ with .Site.Params.social.mastodon }}
+<a class="mastodon" rel="me" target="_blank"
+href="{{ . }}">
+<i class="fab fa-mastodon"
+title="mastodon icon"></i>
+</a>
+{{end}}
+
+
 {{ end }}
 
 
