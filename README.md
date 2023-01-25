@@ -1,8 +1,8 @@
 # Nederburg theme for hugo
 
-Nederburg is a fast and secure theme.
-
-This Hugo theme was ported from [competethemes](https://www.competethemes.com/tracks/).
+Nederburg is a fast and secure theme. It was was ported from [competethemes](https://www.competethemes.com/tracks/) by Appernetic.
+This version is "maintained" (for his own purpose) by moanos. The original theme and Readme can be found [here](https://github.com/appernetic/hugo-nederburg-theme).
+A list of changes is below
 
 ![screenshot](https://raw.githubusercontent.com/appernetic/hugo-nederburg-theme/master/images/screenshot.png)
 
@@ -16,7 +16,7 @@ $ cd themes
 $ git clone https://github.com/appernetic/hugo-nederburg-theme.git
 ```
 
-For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo or use [Appernetic](https://appernetic.io/).
+For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
 ## Configuration
 
@@ -52,25 +52,32 @@ disqusShortname = "your-disqus-short-name"
 
 You can disable the comments system by leaving the `disqusShortname` empty.
 
-### Google Analytics
+## Social Links
 
-You can optionally enable Google Analytics. Type your tracking code in the ``.
+There is the possibility to add social links. The Mastodon and Fediverse profiles will also act as verification
+and set the `rel=me` attribute. if you don't set a name in `[[params.fediverse]]` there will be no visible link
+to the profile.
 
 ```toml
-googleAnalytics = "UA-XXXXX-X"
+[params.social]
+github        = "https://github.com/username"
+email         = "username@example.com"
+twitter       = "https://twitter.com/username"
+linkedin      = "https://www.linkedin.com/in/username/"
+stackoverflow = "https://stackoverflow.com/users/12345/username"
+instagram     = "https://www.instagram.com/username/"
+facebook      = "https://www.facebook.com/username"
+mastodon      = "https://example.social/@username"
+#pinterest     = "full profile url in pinterest"
+#googleplus    = "full profile url in googleplus"
+rss           = true
+
+[[params.fediverse]]
+    url = "https://example.com/@username"
+    name = "@username"
+[[params.fediverse]]
+    url = "https://example.com/@username2"
 ```
-
-Leave the `googleAnalytics` key empty to disable it.
-
-### Make the contact form work
-
-Since this page will be static, you can use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Begin the setup by following the steps below:
-
-1. Enter your email address under 'email' in the [`config.toml`](https://github.com/appernetic/hugo-nederburg-them/tree/master/exampleSite/config.toml)
-2. Upload the generated site to your server
-3. Send a dummy email yourself to confirm your account
-4. Click the confirm link in the email from [formspree.io](//formspree.io/)
-5. You're done. Happy mailing!
 
 ## Multiple Writers Features
 
@@ -109,8 +116,9 @@ Default is to use the static folder for images. If you want to have images in th
 ```toml
 #UsePostImgFolder = true
 ```
-### Privacy settings for Google Analytics
+### Google Analytics
 
+This theme comes with Google Analytics.
 Thanks to [mstroh76](https://github.com/mstroh76) we now have privacy settings for analytics. This is how you configure it (included in exampleSite config.toml):
 
 ```toml
@@ -136,21 +144,16 @@ $ hugo server
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
 
-## Things to do and not (yet) implemented
+## Things changed from the original theme
 
- - Add the possibility for a description for each category.
- - ~~Add pagination to the front page.~~
- - Add dropdown menu option to the left sub menu.
- - Add previous next pagination in blog post.
- - Add a search function.
- - Do a SEO check of site structure and code
- - Page speed check
- - ~~Add a default favicon~~
- - Check that Disqus don’t break anything.
+- use [this PR by MatthewMcD](https://github.com/appernetic/hugo-nederburg-theme/pull/66) to make it work with hugo
+version >0.57.2
+- Add Mastodon&Fediverse functionality
+- Host fonts locally
 
 ## Contributing
 
-Have you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/appernetic/hugo-nederburg-theme/issues) to let me know. Or make directly a [pull request](https://github.com/appernetic/hugo-nederburg-theme/pulls).
+Have you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/moan0s/hugo-nederburg-theme/issues) to let me know. Or make directly a [pull request](https://github.com/appernetic/hugo-nederburg-theme/pulls).
 
 ## License
 
