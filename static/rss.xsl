@@ -69,7 +69,7 @@
             </a>
 
             <h2>Recent blog posts</h2>
-            <xsl:for-each select="/atom:feed/atom:item">
+            <xsl:for-each select="/atom:feed/atom:entry">
               <div class="pb-7">
                 <div class="text-4 font-bold">
                   <a>
@@ -82,7 +82,7 @@
 
                 <div class="text-2 text-offset">
                   Published on
-                  <xsl:value-of select="substring(atom:pubDate, 0, 17)" />
+                  <xsl:value-of select="substring(atom:updated, 0, 17)" />
                 </div>
               </div>
             </xsl:for-each>
