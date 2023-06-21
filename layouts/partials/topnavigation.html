@@ -116,13 +116,16 @@
 
 
     {{ if .Site.Params.social.rss }}
+    {{ with site.Home.OutputFormats.Get "RSS" }}
     <li>
-      <a href="{{ .Site.RSSLink }}" data-animate-hover="pulse" class="rss" target="_blank">
+      <a href="{{ .RelPermalink  }}" data-animate-hover="pulse" class="rss" target="_blank">
         <i class="fas fa-rss" title="rss"></i>
         <span class="screen-reader-text">rss</span>
       </a>
     </li>
-    {{end}}
+
+    {{ end }}
+    {{ end }}
 
 
   </ul></div>
