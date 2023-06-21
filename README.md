@@ -150,6 +150,7 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
 version >0.57.2
 - Add Mastodon&Fediverse functionality
 - Host fonts locally
+- Add RSS rendering & change
 
 ## Contributing
 
