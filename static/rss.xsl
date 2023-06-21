@@ -57,13 +57,13 @@
               </svg>
               RSS Feed Preview
             </h1>
-            <h2>hyteck.de</h2>
+            <h2><xsl:value-of select="/atom:feed/atom:title"/></h2>
             <p>
               <xsl:value-of select="/atom:feed/atom:subtitle"/>
             </p>
             <a>
               <xsl:attribute name="href">
-                <xsl:value-of select="/atom:feed/link[2]/@href"/>
+                <xsl:value-of select="/atom:feed/atom:link"/>
               </xsl:attribute>
               Visit Website &#x2192;
             </a>
@@ -74,7 +74,7 @@
                 <div class="text-4 font-bold">
                   <a>
                     <xsl:attribute name="href">
-                      <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
+                      <xsl:value-of select="atom:link"/>
                     </xsl:attribute>
                     <xsl:value-of select="atom:title"/>
                   </a>
