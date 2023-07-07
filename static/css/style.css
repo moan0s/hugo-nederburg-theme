@@ -279,6 +279,7 @@ th {
 img {
   height: auto;
   line-height: 0;
+  width: 100%;
 }
 
 .singular-attachment img {
