@@ -27,9 +27,8 @@
 <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
 <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
 {{ end }}
-
-{{ if .tracking.oxitraffic.enabled }}
-<script type="module" src="https://{{ .tracking.oxitraffic.hostname }}/count.js"></script>
 {{ end }}
+{{ with .Site.Params.oxitraffic_url }}
+  <script src="{{ . }}" defer></script>
 {{ end }}
 {{ template "_internal/google_analytics_async.html" . }}
