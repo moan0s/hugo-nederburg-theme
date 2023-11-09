@@ -27,8 +27,9 @@
 <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
 <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
 {{ end }}
+
+{{ if .tracking.oxitraffic.enabled }}
+<script type="module" src="https://{{ .tracking.oxitraffic.hostname }}/count.js"></script>
 {{ end }}
-{{ if .Params.tracking.oxitraffic.enabled }}
-<script type="module" src="https://{{ .Params.tracking.oxitraffic.hostname }}/count.js"></script>
 {{ end }}
 {{ template "_internal/google_analytics_async.html" . }}
