@@ -1467,18 +1467,18 @@ li.pingback:first-child {
   }
 }
 .site-footer {
-  color: #8c8c8c;
+  color: #d2d2d2;
   text-align: center;
   padding-top: 3em;
   overflow: hidden;
   clear: both;
 }
 .site-footer a {
-  color: #8c8c8c;
+  color: #e4e4e4;
 }
 .site-footer h1 {
   letter-spacing: 0.06em;
-  opacity: 0.4;
+  opacity: 0.7;
   -webkit-transition: opacity 0.2s ease;
           transition: opacity 0.2s ease;
 }
@@ -1487,7 +1487,7 @@ li.pingback:first-child {
 }
 .site-footer p {
   margin: 0 0 1.5em;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .site-footer .social-media-icons {
   margin: 0.75em 0 1.5em;
