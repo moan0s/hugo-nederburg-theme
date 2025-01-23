@@ -20,3 +20,14 @@ figure {
   padding: 5px;
   border-radius: 5px;
 }
+
+.container {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+
+
+.hosted_on {
+  width: 100px;
+}

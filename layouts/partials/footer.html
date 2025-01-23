@@ -1,33 +1,44 @@
 <footer id="site-footer" class="site-footer" role="contentinfo">
-    <h1>
-        {{ with .Site.Title }}
-        <a href=""> {{ . }} </a>
-        {{ end }}
-    </h1>
-
-    {{ with .Site.Params.Slogan }}
-    <p class="site-description">{{ . | default "" | safeHTML }}</p>
-    {{ end }}
-
-    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
-        <div class="menu">
-
-            <ul id="menu-footer-items" class="menu-footer-items">
-                {{ range $name, $taxonomy := .Site.Params.Navlinks }}
-                <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a
-                        href="/{{ $taxonomy.url | urlize }}">{{ $taxonomy.name }}</a></li>
+    <div class="container">
+        <div>
+            <h1>
+                {{ with .Site.Title }}
+                <a href=""> {{ . }} </a>
                 {{ end }}
-            </ul>
+            </h1>
 
+            {{ with .Site.Params.Slogan }}
+            <p class="site-description">{{ . | default "" | safeHTML }}</p>
+            {{ end }}
+
+            <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+                <div class="menu">
+
+                    <ul id="menu-footer-items" class="menu-footer-items">
+                        {{ range $name, $taxonomy := .Site.Params.Navlinks }}
+                        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a
+                                href="/{{ $taxonomy.url | urlize }}">{{ $taxonomy.name }}</a></li>
+                        {{ end }}
+                    </ul>
+
+                </div>
+            </div>
         </div>
+
+        {{ with .Site.Params.hosted_on }}
+        <div class="hosted_on">
+            <a href="{{ .target }}">
+                <img src="{{ .src }}" alt="{{ .alt }}">
+            </a>
+        </div>
+        {{ end }}
     </div>
 
     <ul class="social-media-icons">
 
         {{ with .Site.Params.social.facebook }}
         <li>
-            <a class="facebook" target="_blank"
-               href="{{ . }}">
+            <a class="facebook" target="_blank" href="{{ . }}">
                 <i class="fab fa-facebook-f" title="facebook"></i>
                 <span class="screen-reader-text">facebook</span>
             </a>
@@ -36,8 +47,7 @@
 
         {{ with .Site.Params.social.googleplus }}
         <li>
-            <a class="googleplus" target="_blank"
-               href="{{ . }}">
+            <a class="googleplus" target="_blank" href="{{ . }}">
                 <i class="fab fa-google-plus-g" title="googleplus"></i>
                 <span class="screen-reader-text">googleplus</span>
             </a>
@@ -111,30 +121,32 @@
         {{end}}
 
         {{ if .Site.Params.social.rss }}
-            {{ with site.Home.OutputFormats.Get "RSS" }}
-            <li>
+        {{ with site.Home.OutputFormats.Get "RSS" }}
+        <li>
             <a href="{{ .RelPermalink  }}" data-animate-hover="pulse" class="rss" target="_blank">
                 <i class="fas fa-rss" title="rss"></i>
                 <span class="screen-reader-text">rss</span>
             </a>
-            </li>
+        </li>
 
-            {{ end }}
+        {{ end }}
         {{ end }}
     </ul>
+    <div class="container">
 
-    <div class="fediverse-verification">
-        <ul>
-            {{ range .Site.Params.fediverse }}
-            <li>
-                <a href="{{ .url }}" rel="me">
-                    {{ if .name }}
-                    <img src="/img/Fediverse_logo.svg" class="inline-img"> {{ .name }}
-                    {{ end }}
-                </a>
-            </li>
-            {{ end }}
-        </ul>
+        <div class="fediverse-verification">
+            <ul>
+                {{ range .Site.Params.fediverse }}
+                <li>
+                    <a href="{{ .url }}" rel="me">
+                        {{ if .name }}
+                        <img src="/img/Fediverse_logo.svg" class="inline-img"> {{ .name }}
+                        {{ end }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
     </div>
     <div class="design-credit">
         {{ range .Site.Params.copyright }}
