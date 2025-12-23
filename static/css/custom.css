@@ -1,38 +1,44 @@
 .inline-img {
-  height: 1rem;
+    height: 1rem;
 }
 
 .fediverse-verification ul {
-  display: flex;
-  flex: auto;
-  justify-content: center;
-  position: relative;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    position: relative;
 }
 
 .fediverse-verification li {
-  padding-left: 20px;
-  padding-right: 20px;
-  list-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    list-style: none;
 }
 
 figure {
-  border: 3px solid black;
-  padding: 5px;
-  border-radius: 5px;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .container {
-  justify-content: center;
-  display: flex;
-  gap: 10px;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
 }
 
 
 .hosted_on {
-  width: 100px;
+    width: 100px;
 }
 
 
 .block:not(:last-child) {
     margin-bottom: 1.5rem;
+
+}
+
+ul.notes-list li {
+    border-bottom: 1px lightgray solid;
+
 }
